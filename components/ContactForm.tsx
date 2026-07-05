@@ -4,16 +4,43 @@ import { useState } from "react";
 
 const volumeOptions = ["< 10k items", "10k – 100k items", "100k – 1M items", "1M+ items"];
 
+type Status = "idle" | "loading" | "success" | "error";
+
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
   const [volume, setVolume] = useState(volumeOptions[0]);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      company: String(data.get("company") || ""),
+      volume,
+      message: String(data.get("message") || ""),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("success");
+      form.reset();
+      setVolume(volumeOptions[0]);
+    } catch {
+      setStatus("error");
+    }
   }
 
-  if (submitted) {
+  if (status === "success") {
     return (
       <div className="card flex h-full min-h-[420px] flex-col items-center justify-center p-10 text-center">
         <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/40">
@@ -39,6 +66,7 @@ export default function ContactForm() {
           </label>
           <input
             id="name"
+            name="name"
             required
             type="text"
             placeholder="Jordan Lee"
@@ -51,6 +79,7 @@ export default function ContactForm() {
           </label>
           <input
             id="email"
+            name="email"
             required
             type="email"
             placeholder="jordan@company.com"
@@ -65,6 +94,7 @@ export default function ContactForm() {
         </label>
         <input
           id="company"
+          name="company"
           type="text"
           placeholder="Company name"
           className="rounded-lg border border-surface-border bg-ink px-4 py-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-gold/60"
@@ -99,15 +129,27 @@ export default function ContactForm() {
         </label>
         <textarea
           id="message"
+          name="message"
           rows={4}
           placeholder="What are you labeling, and what does success look like?"
           className="resize-none rounded-lg border border-surface-border bg-ink px-4 py-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-gold/60"
         />
       </div>
 
-      <button type="submit" className="btn-primary mt-2 w-full sm:w-fit">
-        Submit request
-        <span aria-hidden>→</span>
+      {status === "error" && (
+        <div className="rounded-lg border border-tag-coral/40 bg-tag-coral/10 px-4 py-3 text-sm text-tag-coral">
+          Something went wrong sending your request. Please try again, or
+          email us directly.
+        </div>
+      )}
+
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className="btn-primary mt-2 w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-fit"
+      >
+        {status === "loading" ? "Sending…" : "Submit request"}
+        {status !== "loading" && <span aria-hidden>→</span>}
       </button>
     </form>
   );

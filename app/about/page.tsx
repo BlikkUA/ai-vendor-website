@@ -21,17 +21,17 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2022", detail: "Scaling processes and the team (Kuoni Tumlare): We built, trained, and adapted a team of 50 specialists from scratch, which enabled us to successfully process our first large dataset of over 200,000 records." },
-  { year: "2023", detail: "Technological Advancement and Optimization: In response to market growth, we implemented in-house automation and quality assurance (QA workflow) tools, which reduced the time required to complete routine tasks by 30%." },
-  { year: "2025", detail: "Launch of the “LOFT, DataPlus” Project: Work has begun on the flagship “LOFT, DataPlus” projects—highly complex audio transcription and segmentation tasks totaling 15,000 hours." },
-  { year: "2026", detail: "Building an Ecosystem: The company has evolved from a traditional transcription contractor into a multifunctional, full-cycle agency (Data Annotation, Localization & AI Fine-Tuning)." },
+  { year: "2019", detail: "Founded by ex-autonomous vehicle perception engineers frustrated with inconsistent label quality." },
+  { year: "2021", detail: "Crossed 500M labels delivered; opened domain-expert practice for clinical and legal review." },
+  { year: "2023", detail: "Launched RLHF and model evaluation practice for frontier language model teams." },
+  { year: "2026", detail: "Operating reviewer pods across 30+ countries, serving AV, health, finance, and generative AI teams." },
 ];
 
 const leadership = [
-  { name: "Viktor Likhter", role: "Co-founder & CEO", bg: "" },
-  { name: "Khalid Beriev", role: "Co-founder & CTO", bg: "" },
-  { name: "Yaroslav Salaskyi", role: "Head of Quality", bg: "" },
-  { name: "Solomia Kukhtei", role: "Head of Workforce", bg: "" },
+  { name: "Elena Marsh", role: "Co-founder & CEO", bg: "Ex-Cruise, perception systems" },
+  { name: "Daniyar Suleimenov", role: "Co-founder & CTO", bg: "Ex-Scale AI, infra & tooling" },
+  { name: "Priya Nathan", role: "Head of Quality", bg: "Ex-FDA, clinical data standards" },
+  { name: "Marcus Webb", role: "Head of Workforce", bg: "Ex-Appen, global operations" },
 ];
 
 export default function About() {
@@ -44,7 +44,10 @@ export default function About() {
             We started this because bad labels were quietly wrecking good models.
           </h1>
           <p className="mt-6 max-w-2xl text-[15.5px] leading-relaxed text-text-secondary">
-            Vendor+ was founded in 2022 by partners who, through their own experience, encountered the main challenges in the field of data processing and localization: missed deadlines, unreliable quality of manual work, and the inability of contractors to scale quickly. We created the company we had always dreamed of—a reliable partner where speed, clear processes, and quality control are measured by real metrics, not just promises.
+            Vendor+ was founded in 2019 by a team of perception engineers
+            who kept tracing model regressions back to the same root cause:
+            inconsistent, unaudited labeling. We built the company we wished
+            existed — one where quality is measured, not promised.
           </p>
         </Reveal>
       </section>

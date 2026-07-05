@@ -2,7 +2,10 @@ import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 
 const offices = [
-  { city: "Lviv, Ukraine", detail: "" },
+  { city: "San Francisco, US", detail: "HQ · Solutions & engineering" },
+  { city: "Lisbon, Portugal", detail: "EU operations & quality" },
+  { city: "Manila, Philippines", detail: "APAC reviewer network" },
+  { city: "Nairobi, Kenya", detail: "Africa reviewer network" },
 ];
 
 export default function Contact() {
@@ -32,14 +35,14 @@ export default function Contact() {
                 Direct
               </div>
               <div className="mt-3 flex flex-col gap-2 text-sm">
-                <span className="text-text-primary">nokillazone@gmail.com</span>
-                <span className="text-text-secondary">+38 (093) 925-3276</span>
+                <span className="text-text-primary">solutions@vendorplus.ai</span>
+                <span className="text-text-secondary">+1 (415) 555-0142</span>
               </div>
             </div>
 
             <div className="card p-7">
               <div className="font-mono text-xs uppercase tracking-[0.14em] text-text-tertiary">
-                Location
+                Offices
               </div>
               <ul className="mt-3 flex flex-col divide-y divide-surface-border">
                 {offices.map((o) => (
@@ -58,7 +61,7 @@ export default function Contact() {
               <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                 Enterprise and pilot inquiries are reviewed by our solutions
                 team within one business day. Security and compliance
-                questions can be directed to nokillazone@gmail.com.
+                questions can be directed to trust@vendorplus.ai.
               </p>
             </div>
           </div>
