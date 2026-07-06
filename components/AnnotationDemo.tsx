@@ -120,7 +120,7 @@ export default function AnnotationDemo() {
           <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-tag-teal" />
           reviewer_queue: live
         </span>
-        <span>throughput: 42,110 labels/hr</span>
+        <span>throughput: 2,110 labels/hr</span>
       </div>
     </div>
   );
