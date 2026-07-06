@@ -2,10 +2,7 @@ import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 
 const offices = [
-  { city: "San Francisco, US", detail: "HQ · Solutions & engineering" },
-  { city: "Lisbon, Portugal", detail: "EU operations & quality" },
-  { city: "Manila, Philippines", detail: "APAC reviewer network" },
-  { city: "Nairobi, Kenya", detail: "Africa reviewer network" },
+  { city: "Lviv, Ukraine", detail: "" },
 ];
 
 export default function Contact() {
