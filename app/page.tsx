@@ -4,8 +4,8 @@ import TagMarquee from "@/components/TagMarquee";
 import Reveal from "@/components/Reveal";
 
 const stats = [
-  { value: "4.2B+", label: "Labels delivered" },
-  { value: "99.6%", label: "Median label accuracy" },
+  { value: "2M+", label: "Labels delivered" },
+  { value: "98%", label: "Median label accuracy" },
   { value: "60+", label: "Domain expert specialties" },
   { value: "<24h", label: "Pilot turnaround" },
 ];
