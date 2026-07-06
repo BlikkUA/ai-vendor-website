@@ -94,7 +94,7 @@ export default function Home() {
                 <span>Trusted by ML teams at</span>
               </div>
               <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-3 text-text-tertiary">
-                {["Vertex Robotics", "Northlane Health", "Ferro Labs", "Argus AI", "Meridian Bank"].map(
+                {["Appen", "Data Plus", "LOFT", "Kuoni Tumlare", ""].map(
                   (name) => (
                     <span
                       key={name}
