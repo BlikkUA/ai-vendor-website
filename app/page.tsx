@@ -218,7 +218,7 @@ export default function Home() {
               than the previous quarter."
             </p>
             <div className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-text-tertiary">
-              Head of ML Data · Argus AI
+              Head of ML Data · LOFT
             </div>
           </div>
         </Reveal>
