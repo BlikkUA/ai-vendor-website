@@ -32,8 +32,8 @@ export default function Contact() {
                 Direct
               </div>
               <div className="mt-3 flex flex-col gap-2 text-sm">
-                <span className="text-text-primary">solutions@vendorplus.ai</span>
-                <span className="text-text-secondary">+1 (415) 555-0142</span>
+                <span className="text-text-primary">nokillazone@gmail.com</span>
+                <span className="text-text-secondary">+38 (093) 925-3276</span>
               </div>
             </div>
 
@@ -57,8 +57,7 @@ export default function Contact() {
               </div>
               <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                 Enterprise and pilot inquiries are reviewed by our solutions
-                team within one business day. Security and compliance
-                questions can be directed to trust@vendorplus.ai.
+                team within one business day.
               </p>
             </div>
           </div>
