@@ -47,7 +47,7 @@ export default function About() {
             Vendor+ was founded in 2022 by a team of perception engineers
             who kept tracing model regressions back to the same root cause:
             inconsistent, unaudited labeling. We built the company we wished
-            existed — one where quality is measured, not promised.
+            exists — one where quality is measured, not promised.
           </p>
         </Reveal>
       </section>
@@ -136,7 +136,7 @@ export default function About() {
                 meet you — wherever you're based.
               </p>
               <div className="mt-8 flex justify-center">
-                <Link href="/contact" className="btn-primary">
+                <Link href="/careers" className="btn-primary">
                   View open roles
                   <span aria-hidden>→</span>
                 </Link>
