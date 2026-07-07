@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import LegalPage, { LegalSection } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Vendor+",
   description:
     "How Vendor+ collects, uses, and protects personal data and client content across our data annotation services.",
 };
+
+interface LegalSection {
+  id: string;
+  heading: string;
+  body: React.ReactNode;
+}
 
 const sections: LegalSection[] = [
   {
@@ -28,25 +33,25 @@ const sections: LegalSection[] = [
     heading: "2. Information we collect",
     body: (
       <>
-        <p>We collect a limited set of information necessary to operate our services and respond to inquiries:</p>
-        <ul className="flex flex-col gap-2 pl-5">
+        <p className="mb-4">We collect a limited set of information necessary to operate our services and respond to inquiries:</p>
+        <ul className="flex flex-col gap-3 pl-5 text-slate-400">
           <li className="list-disc">
-            <span className="text-text-primary">Contact information</span> —
+            <span className="text-white font-medium">Contact information</span> —{" "}
             name, work email, company, and phone number submitted through our
             contact form or provided during onboarding.
           </li>
           <li className="list-disc">
-            <span className="text-text-primary">Account information</span> —
+            <span className="text-white font-medium">Account information</span> —{" "}
             login credentials and role, for individuals with access to our
             client dashboard.
           </li>
           <li className="list-disc">
-            <span className="text-text-primary">Usage data</span> — pages
+            <span className="text-white font-medium">Usage data</span> — pages{" "}
             visited, referring URLs, browser type, and device information,
             collected automatically via standard analytics tooling.
           </li>
           <li className="list-disc">
-            <span className="text-text-primary">Client content</span> —
+            <span className="text-white font-medium">Client content</span> —{" "}
             datasets, files, and associated metadata that clients submit to
             us for annotation, evaluation, or review under a service
             agreement.
@@ -60,15 +65,15 @@ const sections: LegalSection[] = [
     heading: "3. How we use information",
     body: (
       <>
-        <p>We use the information described above to:</p>
-        <ul className="flex flex-col gap-2 pl-5">
+        <p className="mb-4">We use the information described above to:</p>
+        <ul className="flex flex-col gap-2 pl-5 text-slate-400 mb-4">
           <li className="list-disc">Respond to pilot and sales inquiries, and deliver requested services.</li>
           <li className="list-disc">Operate, maintain, and improve our annotation tooling and quality systems.</li>
           <li className="list-disc">Provision and manage access to our client dashboard and reporting.</li>
           <li className="list-disc">Send service-related communications, including delivery updates and invoices.</li>
           <li className="list-disc">Comply with legal obligations and enforce our Terms of Service.</li>
         </ul>
-        <p>
+        <p className="pt-2">
           We do not sell personal data, and we do not use client content to
           train our own general-purpose models without a client's prior
           written authorization.
@@ -140,7 +145,7 @@ const sections: LegalSection[] = [
     id: "rights",
     heading: "8. Your rights",
     body: (
-      <>
+      <div className="space-y-4">
         <p>
           Depending on your location, you may have rights under applicable
           data protection law — including the GDPR and applicable US state
@@ -149,10 +154,12 @@ const sections: LegalSection[] = [
         </p>
         <p>
           To exercise any of these rights, contact us at{" "}
-          <span className="text-text-primary">privacy@vendorplus.ai</span>.
-          We will respond within the timeframe required by applicable law.
+          <span className="text-white font-mono bg-white/5 px-2 py-0.5 rounded border border-white/10">
+            nokillazone@gmail.com
+          </span>
+          . We will respond within the timeframe required by applicable law.
         </p>
-      </>
+      </div>
     ),
   },
   {
@@ -162,7 +169,7 @@ const sections: LegalSection[] = [
       <p>
         Vendor+ operates a global reviewer network and hosting
         infrastructure across multiple regions. Where personal data is
-        transferred internationally, we rely on recognized transfer
+        translated internationally, we rely on recognized transfer
         mechanisms, including Standard Contractual Clauses, to maintain an
         adequate level of protection consistent with GDPR requirements.
       </p>
@@ -199,7 +206,10 @@ const sections: LegalSection[] = [
       <p>
         Questions about this Privacy Policy or our data practices can be
         directed to{" "}
-        <span className="text-text-primary">privacy@vendorplus.ai</span>.
+        <span className="text-white font-mono bg-white/5 px-2 py-0.5 rounded border border-white/10">
+          nokillazone@gmail.com
+        </span>
+        .
       </p>
     ),
   },
@@ -207,12 +217,74 @@ const sections: LegalSection[] = [
 
 export default function PrivacyPolicy() {
   return (
-    <LegalPage
-      eyebrow="Legal"
-      title="Privacy Policy"
-      intro="This policy explains how Vendor+ collects, uses, and safeguards personal data and client content across our website, dashboard, and annotation services."
-      lastUpdated="July 7, 2026"
-      sections={sections}
-    />
+    <div className="relative min-h-screen text-slate-300 overflow-hidden selection:bg-amber-500/20 selection:text-amber-200 bg-ink">
+      
+      {/* Фонове неонове світіння (Glow effects) */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 py-24 lg:py-32 relative z-10">
+        
+        {/* Головний блок заголовка */}
+        <div className="max-w-3xl border-b border-white/10 pb-12 mb-16">
+          <span className="font-mono text-[11px] tracking-widest uppercase text-amber-400 font-medium bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+            Legal Documentation
+          </span>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mt-6 mb-6 tracking-tight">
+            Privacy Policy
+          </h1>
+          <p className="font-body text-lg text-slate-400 leading-relaxed mb-6">
+            This policy explains how Vendor+ collects, uses, and safeguards personal data and client content across our website, dashboard, and annotation services.
+          </p>
+          <p className="font-mono text-xs text-slate-500 flex items-center gap-2">
+            <span>Last updated:</span>
+            <span className="text-slate-400 font-medium">July 7, 2026</span>
+          </p>
+        </div>
+
+        {/* Двоколонкова сітка: Сайдбар + Контент */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+          
+          {/* Лівий інтерактивний зміст (sticky) */}
+          <aside className="lg:w-64 shrink-0 lg:sticky lg:top-28 h-fit hidden lg:block">
+            <p className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">
+              On this page
+            </p>
+            <nav className="flex flex-col gap-2.5 border-l border-white/10 pl-4">
+              {sections.map((section) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  className="font-body text-[13px] text-slate-400 hover:text-white transition-all py-0.5 block truncate hover:translate-x-1 duration-200"
+                >
+                  {section.heading.split(". ")[1] || section.heading}
+                </a>
+              ))}
+            </nav>
+          </aside>
+
+          {/* Правий блок із текстом */}
+          <article className="flex-1 max-w-3xl">
+            <div className="flex flex-col gap-12 lg:gap-16">
+              {sections.map((section) => (
+                <section
+                  key={section.id}
+                  id={section.id}
+                  className="scroll-mt-28 group border-b border-white/[0.03] pb-10 last:border-0"
+                >
+                  <h2 className="font-display text-xl sm:text-2xl font-semibold text-white mb-4 group-hover:text-amber-400 transition-colors duration-300">
+                    {section.heading}
+                  </h2>
+                  <div className="font-body text-slate-400 leading-relaxed space-y-4 text-[15px]">
+                    {section.body}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
   );
 }

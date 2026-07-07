@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import LegalPage, { LegalSection } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Terms of Service — Vendor+",
   description:
     "The terms governing use of the Vendor+ website, dashboard, and data annotation services.",
 };
+
+interface LegalSection {
+  id: string;
+  heading: string;
+  body: React.ReactNode;
+}
 
 const sections: LegalSection[] = [
   {
@@ -43,8 +48,8 @@ const sections: LegalSection[] = [
     heading: "3. Client responsibilities",
     body: (
       <>
-        <p>As a client of Vendor+, you agree to:</p>
-        <ul className="flex flex-col gap-2 pl-5">
+        <p className="mb-3">As a client of Vendor+, you agree to:</p>
+        <ul className="flex flex-col gap-2 pl-5 text-slate-400">
           <li className="list-disc">Provide accurate taxonomies, guidelines, and quality criteria for the data submitted.</li>
           <li className="list-disc">Hold all necessary rights, licenses, and consents to submit content for annotation.</li>
           <li className="list-disc">Not submit content that is unlawful, infringing, or that you do not have the right to share.</li>
@@ -72,7 +77,7 @@ const sections: LegalSection[] = [
     id: "intellectual-property",
     heading: "5. Intellectual property",
     body: (
-      <>
+      <div className="space-y-4">
         <p>
           As between the parties, clients retain all right, title, and
           interest in the data, content, and taxonomies they submit, and in
@@ -86,7 +91,7 @@ const sections: LegalSection[] = [
           of providing the Services, excluding any client-specific data
           embedded within it.
         </p>
-      </>
+      </div>
     ),
   },
   {
@@ -114,7 +119,7 @@ const sections: LegalSection[] = [
         content submitted for annotation is treated as confidential
         information and is accessible only to personnel and systems
         assigned to the relevant engagement, as described in our{" "}
-        <a href="/security" className="text-gold hover:text-gold-soft">
+        <a href="/security" className="text-gold hover:text-gold-soft underline underline-offset-4 decoration-gold/30">
           Security page
         </a>
         .
@@ -214,7 +219,10 @@ const sections: LegalSection[] = [
     body: (
       <p>
         Questions about these Terms can be directed to{" "}
-        <span className="text-text-primary">legal@vendorplus.ai</span>.
+        <span className="text-white font-mono bg-white/5 px-2 py-0.5 rounded border border-white/10">
+          nokillazone@gmail.com
+        </span>
+        .
       </p>
     ),
   },
@@ -222,12 +230,74 @@ const sections: LegalSection[] = [
 
 export default function TermsOfService() {
   return (
-    <LegalPage
-      eyebrow="Legal"
-      title="Terms of Service"
-      intro="These Terms govern your access to and use of the Vendor+ website, client dashboard, and data annotation services."
-      lastUpdated="July 7, 2026"
-      sections={sections}
-    />
+    <div className="relative min-h-screen text-slate-300 overflow-hidden selection:bg-amber-500/20 selection:text-amber-200 bg-ink">
+      
+      {/* Футуристичні світлові ефекти (Glow) на фоні */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 py-24 lg:py-32 relative z-10">
+        
+        {/* Головна шапка сторінки */}
+        <div className="max-w-3xl border-b border-white/10 pb-12 mb-16">
+          <span className="font-mono text-[11px] tracking-widest uppercase text-amber-400 font-medium bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+            Legal Documentation
+          </span>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-white mt-6 mb-6 tracking-tight">
+            Terms of Service
+          </h1>
+          <p className="font-body text-lg text-slate-400 leading-relaxed mb-6">
+            The terms governing use of the Vendor+ website, dashboard, and data annotation services.
+          </p>
+          <p className="font-mono text-xs text-slate-500 flex items-center gap-2">
+            <span>Last updated:</span>
+            <span className="text-slate-400 font-medium">July 7, 2026</span>
+          </p>
+        </div>
+
+        {/* Двоколонковий макет: Навігація сайдбару + Текст */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+          
+          {/* Ліва колонка: Фіксоване меню зі змістом (ховається на смартфонах) */}
+          <aside className="lg:w-64 shrink-0 lg:sticky lg:top-28 h-fit hidden lg:block">
+            <p className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">
+              On this page
+            </p>
+            <nav className="flex flex-col gap-2.5 border-l border-white/10 pl-4">
+              {sections.map((section) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  className="font-body text-[13px] text-slate-400 hover:text-white transition-all py-0.5 block truncate hover:translate-x-1 duration-200"
+                >
+                  {section.heading.split(". ")[1] || section.heading}
+                </a>
+              ))}
+            </nav>
+          </aside>
+
+          {/* Права колонка: Весь юридичний текст */}
+          <article className="flex-1 max-w-3xl">
+            <div className="flex flex-col gap-12 lg:gap-16">
+              {sections.map((section) => (
+                <section
+                  key={section.id}
+                  id={section.id}
+                  className="scroll-mt-28 group border-b border-white/[0.03] pb-10 last:border-0"
+                >
+                  <h2 className="font-display text-xl sm:text-2xl font-semibold text-white mb-4 group-hover:text-amber-400 transition-colors duration-300">
+                    {section.heading}
+                  </h2>
+                  <div className="font-body text-slate-400 leading-relaxed space-y-4 text-[15px]">
+                    {section.body}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
   );
 }

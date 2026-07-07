@@ -77,9 +77,9 @@ export default function Footer() {
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-surface-border pt-8 text-xs text-text-tertiary md:flex-row md:items-center">
           <span>© {new Date().getFullYear()} Vendor+ Data, Inc. All rights reserved.</span>
           <div className="flex gap-6">
-            <Link href="/contact" className="hover:text-text-secondary">Privacy</Link>
-            <Link href="/contact" className="hover:text-text-secondary">Terms</Link>
-            <Link href="/contact" className="hover:text-text-secondary">Security</Link>
+            <Link href="/privacy" className="hover:text-text-secondary">Privacy</Link>
+            <Link href="/terms" className="hover:text-text-secondary">Terms</Link>
+            <Link href="/security" className="hover:text-text-secondary">Security</Link>
           </div>
         </div>
       </div>
