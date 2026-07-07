@@ -26,67 +26,72 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        open || scrolled
-          ? "border-b border-surface-border bg-ink/80 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
-      }`}
-    >
-      <nav className="container-page flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="relative flex h-6 w-6 items-center justify-center rounded border border-gold/40">
-            <span className="h-1.5 w-1.5 animate-pulse-dot rounded-sm bg-gold" />
-          </span>
-          <span className="font-display text-[17px] font-semibold tracking-tight text-text-primary">
-            Vendor+
-          </span>
-        </Link>
-
-        <div className="hidden items-center gap-8 md:flex">
-          {links.slice(1).map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="font-body text-[13.5px] font-medium text-text-secondary transition-colors hover:text-text-primary"
-            >
-              {l.label}
-            </Link>
-          ))}
-        </div>
-
-        <div className="hidden md:flex">
-          <Link href="/contact" className="btn-primary">
-            Request a pilot
-          </Link>
-        </div>
-
-        <button
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
-        >
-          <span
-            className={`block h-[1.5px] w-5 bg-text-primary transition-transform duration-300 ${
-              open ? "translate-y-[3.5px] rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`block h-[1.5px] w-5 bg-text-primary transition-transform duration-300 ${
-              open ? "-translate-y-[3.5px] -rotate-45" : ""
-            }`}
-          />
-        </button>
-      </nav>
-
-      {/* Мобільне меню */}
-      <div
-        className={`fixed inset-x-0 bottom-0 top-16 z-40 bg-ink/90 backdrop-blur-xl transition-all duration-300 ease-out md:hidden ${
-          open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
+    <>
+      {/* 1. Головна шапка (Header) */}
+      <header
+        className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
+          open
+            ? "border-b border-surface-border bg-ink/80" 
+            : scrolled
+            ? "border-b border-surface-border bg-ink/80 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="container-page flex flex-col gap-1 py-8">
+        <nav className="container-page flex h-16 items-center justify-between">
+          <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+            <span className="relative flex h-6 w-6 items-center justify-center rounded border border-gold/40">
+              <span className="h-1.5 w-1.5 animate-pulse-dot rounded-sm bg-gold" />
+            </span>
+            <span className="font-display text-[17px] font-semibold tracking-tight text-text-primary">
+              Vendor+
+            </span>
+          </Link>
+
+          <div className="hidden items-center gap-8 md:flex">
+            {links.slice(1).map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="font-body text-[13.5px] font-medium text-text-secondary transition-colors hover:text-text-primary"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="hidden md:flex">
+            <Link href="/contact" className="btn-primary">
+              Request a pilot
+            </Link>
+          </div>
+
+          <button
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="relative z-50 flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+          >
+            <span
+              className={`block h-[1.5px] w-5 bg-text-primary transition-transform duration-300 ${
+                open ? "translate-y-[3.5px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-[1.5px] w-5 bg-text-primary transition-transform duration-300 ${
+                open ? "-translate-y-[3.5px] -rotate-45" : ""
+              }`}
+            />
+          </button>
+        </nav>
+      </header>
+
+      {/* 2. Повноекранне мобільне меню */}
+      <div
+        className={`fixed inset-0 z-40 bg-ink/80 backdrop-blur-xl transition-all duration-300 md:hidden ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="container-page flex flex-col gap-1 pt-24 pb-8">
           {links.slice(1).map((l) => (
             <Link
               key={l.href}
@@ -106,6 +111,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-    </header>
+    </>
   );
 }
