@@ -4,10 +4,10 @@ const columns = [
   {
     title: "Services",
     links: [
-      { href: "/services", label: "Data labeling" },
-      { href: "/services", label: "RLHF & evaluation" },
-      { href: "/services", label: "Data collection" },
-      { href: "/services", label: "Trust & safety review" },
+      { href: "/services#data-labelling-&-annotation", label: "Data labeling" },
+      { href: "/services#rlhf-&-evaluation", label: "RLHF & evaluation" },
+      { href: "/services#data-collection", label: "Data collection" },
+      { href: "/services#trust-&-safety-review", label: "Trust & safety review" },
     ],
   },
   {
@@ -24,8 +24,8 @@ const columns = [
     links: [
       { href: "/about", label: "About" },
       { href: "/contact", label: "Contact" },
-      { href: "/contact", label: "Careers" },
-      { href: "/contact", label: "Trust center" },
+      { href: "/careers", label: "Careers" },
+      { href: "/trust", label: "Trust center" },
     ],
   },
 ];

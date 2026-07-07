@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled
+        open || scrolled
           ? "border-b border-surface-border bg-ink/80 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
@@ -80,18 +80,19 @@ export default function Navbar() {
         </button>
       </nav>
 
+      {/* Мобільне меню */}
       <div
-        className={`fixed inset-x-0 top-16 z-40 origin-top border-b border-surface-border bg-ink/98 backdrop-blur-md transition-all duration-300 ease-out md:hidden ${
+        className={`fixed inset-x-0 bottom-0 top-16 z-40 bg-ink/90 backdrop-blur-xl transition-all duration-300 ease-out md:hidden ${
           open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
         }`}
       >
-        <div className="container-page flex flex-col gap-1 py-6">
+        <div className="container-page flex flex-col gap-1 py-8">
           {links.slice(1).map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-3 font-body text-base font-medium text-text-secondary transition-colors hover:bg-surface hover:text-text-primary"
+              className="rounded-lg px-4 py-4 font-body text-lg font-medium text-text-secondary transition-colors hover:bg-surface hover:text-text-primary"
             >
               {l.label}
             </Link>
@@ -99,7 +100,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="btn-primary mt-3 w-full"
+            className="btn-primary mt-6 w-full py-4 text-center text-[15px]"
           >
             Request a pilot
           </Link>
