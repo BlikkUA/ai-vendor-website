@@ -7,8 +7,8 @@
     rx="8"
     fill="#0B0D10"
     stroke="#E8B84B"
-    stroke-opacity="0.4"
-    stroke-width="1.5"
+    stroke-opacity="0.5"
+    stroke-width="2"
   />
-  <rect x="13" y="13" width="6" height="6" rx="1.5" fill="#E8B84B" />
+  <rect x="9" y="9" width="14" height="14" rx="3.5" fill="#E8B84B" />
 </svg>
