@@ -4,10 +4,10 @@ import TagMarquee from "@/components/TagMarquee";
 import Reveal from "@/components/Reveal";
 
 const stats = [
-  { value: "2M+", label: "Labels delivered" },
-  { value: "98%", label: "Median label accuracy" },
-  { value: "60+", label: "Domain expert specialties" },
-  { value: "<24h", label: "Pilot turnaround" },
+  { value: "Flexible", label: "Scalable project teams" },
+  { value: "QA", label: "Multi-stage quality control" },
+  { value: "Global", label: "Remote workforce" },
+  { value: "<24h", label: "Project onboarding" },
 ];
 
 const services = [
@@ -88,7 +88,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={320}>
               <div className="mt-10 flex items-center gap-6 font-mono text-[11px] uppercase tracking-[0.12em] text-text-tertiary">
-                <span>Trusted by ML teams at</span>
+                <span>Team experience includes projects delivered through leading AI data vendors.</span>
               </div>
               <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-3 text-text-tertiary">
                 {["Appen", "Data Plus", "LOFT", "Kuoni Tumlare", ""].map(
