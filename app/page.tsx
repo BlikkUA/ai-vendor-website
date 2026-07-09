@@ -67,15 +67,12 @@ export default function Home() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-5 text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-text-primary sm:text-5xl lg:text-[3.4rem]">
-                The ground truth layer for frontier AI.
+                Scale Your AI Projects with Reliable Human Data Operations
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 max-w-lg text-[15.5px] leading-relaxed text-text-secondary">
-                Vendor+ pairs calibrated human expertise with purpose-built
-                tooling to label, evaluate, and review the data your models
-                learn from — at the accuracy regulated and frontier teams
-                require.
+                We provide trained remote teams for AI data annotation, RLHF, LLM evaluation, transcription, and quality assurance. Our goal is to help companies scale faster while maintaining high data quality.
               </p>
             </Reveal>
             <Reveal delay={240}>
