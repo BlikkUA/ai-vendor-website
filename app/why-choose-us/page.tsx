@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: "98%", label: "Median accuracy rate" },
-  { value: "<24h", label: "Team ramp-up time" },
+  { value: "<12h", label: "Team ramp-up time" },
   { value: "50+", label: "Specialists per team" },
   { value: "200k+", label: "Records processed" },
 ];

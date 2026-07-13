@@ -14,22 +14,22 @@ const services = [
   {
     title: "Data labeling",
     desc: "Image, video, text, audio, and 3D annotation with task-specific tooling and calibrated reviewers.",
-    tags: ["bounding_box", "segmentation", "3d_cuboid"],
+    tags: ["", "", ""],
   },
   {
     title: "RLHF & model evaluation",
-    desc: "Human preference ranking, red-teaming, and structured evals to steer and benchmark your models.",
-    tags: ["ranking", "red_team", "rubric_eval"],
+    desc: "Training based on reinforcement through human feedback. A key stage in training modern artificial intelligence models. It helps transform a basic language model (which simply generates text) into a safe and useful assistant that understands human intentions, ethics, and tone.",
+    tags: ["", "", ""],
   },
   {
     title: "Data collection & sourcing",
-    desc: "Purpose-built datasets gathered through vetted contributor networks and field capture programs.",
-    tags: ["voice", "image_capture", "synthetic"],
+    desc: "Specially curated datasets collected through verified participant networks and data collection programs on open networks.",
+    tags: ["", "", ""],
   },
   {
-    title: "Domain expert review",
-    desc: "Licensed clinicians, lawyers, and analysts annotate and adjudicate high-stakes, regulated data.",
-    tags: ["clinical", "legal", "financial"],
+    title: "Audio/Video transcription",
+    desc: "Audio and video transcription. We work with a variety of formats and topics to meet your needs",
+    tags: ["", "", ""],
   },
 ];
 
