@@ -73,12 +73,12 @@ export default function Services() {
       {/* 4. Секція: Trust & safety review */}
       <section id="trust-&-safety-review" className="container-page py-20 border-t border-surface-border scroll-mt-24">
         <Reveal>
-          <span className="eyebrow">04 / Moderation</span>
+          <span className="eyebrow">04 / Accuracy</span>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl text-text-primary">
-            Trust & safety review
+            Audio/Video transcription
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-secondary">
-            Policy alignment, adversarial testing, and sensitive content moderation. Ensuring your frontier models remain secure, robust, and compliant with global safety standard frameworks.
+            Audio and video transcription. We work with a variety of formats and topics to meet your needs.
           </p>
           <div className="mt-8 card p-6 bg-surface/10 max-w-xl">
             <p className="text-xs font-mono text-gold">✓ Built around enterprise security requirements and strict data protection</p>
