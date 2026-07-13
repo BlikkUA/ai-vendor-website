@@ -32,7 +32,7 @@ export default function Contact() {
                 Direct
               </div>
               <div className="mt-3 flex flex-col gap-2 text-sm">
-                <span className="text-text-primary">nokillazone@gmail.com</span>
+                <span className="text-text-primary">info@vendor-plus.com</span>
                 <span className="text-text-secondary">+38 (093) 925-3276</span>
               </div>
             </div>

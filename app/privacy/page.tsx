@@ -155,7 +155,7 @@ const sections: LegalSection[] = [
         <p>
           To exercise any of these rights, contact us at{" "}
           <span className="text-white font-mono bg-white/5 px-2 py-0.5 rounded border border-white/10">
-            nokillazone@gmail.com
+            info@vendor-plus.com
           </span>
           . We will respond within the timeframe required by applicable law.
         </p>
@@ -207,7 +207,7 @@ const sections: LegalSection[] = [
         Questions about this Privacy Policy or our data practices can be
         directed to{" "}
         <span className="text-white font-mono bg-white/5 px-2 py-0.5 rounded border border-white/10">
-          nokillazone@gmail.com
+          info@vendor-plus.com
         </span>
         .
       </p>

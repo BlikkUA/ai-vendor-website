@@ -220,7 +220,7 @@ const sections: LegalSection[] = [
       <p>
         Questions about these Terms can be directed to{" "}
         <span className="text-white font-mono bg-white/5 px-2 py-0.5 rounded border border-white/10">
-          nokillazone@gmail.com
+          info@vendor-plus.com
         </span>
         .
       </p>

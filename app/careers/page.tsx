@@ -110,7 +110,7 @@ export default function Careers() {
               href="mailto:careers@vendorplus.ai" 
               className="font-mono text-sm text-gold hover:underline underline-offset-4"
             >
-              nokillazone@gmail.com
+              info@vendor-plus.com
             </a>
           </div>
         </Reveal>

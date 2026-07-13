@@ -120,7 +120,7 @@ const sections: LegalSection[] = [
           Audit reports and certificates are available to clients and
           prospective clients under NDA — contact{" "}
           <span className="text-white font-mono bg-white/5 px-2 py-0.5 rounded border border-white/10">
-            nokillazone@gmail.com
+            info@vendor-plus.com
           </span>{" "}
           to request them.
         </p>
@@ -150,7 +150,7 @@ const sections: LegalSection[] = [
         If you believe you've identified a security issue affecting our
         website, dashboard, or services, please report it to{" "}
         <span className="text-white font-mono bg-white/5 px-2 py-0.5 rounded border border-white/10">
-          nokillazone@gmail.com
+          info@vendor-plus.com
         </span>{" "}
         with sufficient detail to reproduce the issue. We ask that you
         avoid accessing or modifying data that isn't yours, and give us a
@@ -193,7 +193,7 @@ const sections: LegalSection[] = [
         For security questionnaires, audit requests, or to report a
         vulnerability, contact{" "}
         <span className="text-white font-mono bg-white/5 px-2 py-0.5 rounded border border-white/10">
-          nokillazone@gmail.com
+          info@vendor-plus.com
         </span>
         .
       </p>
