@@ -71,7 +71,7 @@ export default function Services() {
       </section>
 
       {/* 4. Секція: Trust & safety review */}
-      <section id="trust-&-safety-review" className="container-page py-20 border-t border-surface-border scroll-mt-24">
+      <section id="audio-video-transcription" className="container-page py-20 border-t border-surface-border scroll-mt-24">
         <Reveal>
           <span className="eyebrow">04 / Accuracy</span>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl text-text-primary">

@@ -7,7 +7,7 @@ const columns = [
       { href: "/services#data-labelling-&-annotation", label: "Data labeling" },
       { href: "/services#rlhf-&-evaluation", label: "RLHF & evaluation" },
       { href: "/services#data-collection", label: "Data collection" },
-      { href: "/services#trust-&-safety-review", label: "Trust & safety review" },
+      { href: "/services#audio-video-transcription", label: "Audio/Video transcription" },
     ],
   },
   {
@@ -25,6 +25,7 @@ const columns = [
       { href: "/about", label: "About" },
       { href: "/contact", label: "Contact" },
       { href: "/careers", label: "Careers" },
+      { href: "/faq", label: "FAQ" },
       { href: "/trust", label: "Trust center" },
     ],
   },

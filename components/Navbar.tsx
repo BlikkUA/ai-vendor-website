@@ -9,7 +9,7 @@ const links = [
   { href: "/industries", label: "Industries" },
   { href: "/why-choose-us", label: "Why Choose Us" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function Navbar() {
