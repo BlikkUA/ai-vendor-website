@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-// Імпорт твоїх компонентів та форми зв'язку
+// Імпортуємо твої компоненти та форму зв'язку
 import Reveal from "@/components/Reveal";
 import ContactSection from '@/app/contact/page'; 
 
@@ -84,7 +84,8 @@ const pipelineSteps: Step[] = [
 
 export default function PitchPage() {
   return (
-    <div className="relative min-h-screen pb-24 selection:bg-gold selection:text-black">
+    // overflow-x-hidden ліквідує будь-яке горизонтальне зміщення та зсув сторінки вліво на смартфонах
+    <div className="relative min-h-screen pb-24 overflow-x-hidden selection:bg-gold selection:text-black bg-background">
       
       {/* Background Decorative Blur */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-[120px] pointer-events-none" />
@@ -231,48 +232,49 @@ export default function PitchPage() {
 
         {/* Timeline List Container */}
         <div className="relative max-w-5xl mx-auto">
-          {/* Vertical central connector line for desktop */}
-          <div className="absolute left-[31px] top-4 bottom-4 w-px bg-surface-border hidden md:block" />
+          {/* 
+            Оновлена вертикальна лінія: 
+            Повністю підлаштовується під розміри кіл на мобілках (left-[24px]) та десктопах (md:left-[32px]).
+            Тепер вона ідеально ховається за кружечками, оскільки вони мають заливку bg-[#0a0a0c] (або bg-background) з вищим z-index.
+          */}
+          <div className="absolute left-[24px] md:left-[32px] top-6 md:top-8 bottom-6 md:bottom-8 w-px bg-surface-border" />
 
-          <div className="space-y-12 md:space-y-16">
+          {/* Використовуємо flex-row на всіх пристроях з gap-4 на мобілках та gap-12 на десктопах */}
+          <div className="space-y-10 md:space-y-16">
             {pipelineSteps.map((step, i) => (
-              <div key={step.number} className="relative flex flex-col md:flex-row md:gap-12">
+              <div key={step.number} className="relative flex gap-4 md:gap-12">
                 
-                {/* Visual Step Indicator (Number Dot) */}
-                <div className="flex items-center gap-4 md:flex-col md:items-center md:gap-2 z-10">
-                  <div className="flex items-center justify-center h-[64px] w-[64px] rounded-full border border-surface-border bg-surface-1 text-gold font-mono text-lg font-bold shadow-sm">
+                {/* Кругла плашка з номером етапу */}
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 rounded-full border border-surface-border bg-background text-gold font-mono text-sm md:text-lg font-bold shadow-sm">
                     {step.number}
                   </div>
-                  {/* Vertical connector line segment on mobile screens */}
-                  {i < pipelineSteps.length - 1 && (
-                    <div className="absolute left-[31px] top-[64px] h-[calc(100%+32px)] w-px bg-surface-border md:hidden" />
-                  )}
                 </div>
 
-                {/* Step Card Details */}
-                <div className="flex-1 mt-4 md:mt-0">
+                {/* Картка з текстовим описом (завжди праворуч від лінії, жодних накладень) */}
+                <div className="flex-1 min-w-0">
                   <Reveal delay={i * 80}>
-                    <div className="card group p-6 md:p-8 transition-all duration-300 hover:border-gold/30 hover:bg-surface-2/40">
+                    <div className="card group p-5 md:p-8 transition-all duration-300 hover:border-gold/30 hover:bg-surface-2/40">
                       
                       {/* Step Header */}
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-surface-border/60">
-                        <h3 className="font-display text-lg font-semibold text-text-primary">
+                        <h3 className="font-display text-base md:text-lg font-semibold text-text-primary">
                           {step.title}
                         </h3>
-                        <span className="self-start sm:self-auto font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-gold bg-gold/5 border border-gold/20 px-2.5 py-1 rounded">
+                        <span className="self-start sm:self-auto font-mono text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.12em] text-gold bg-gold/5 border border-gold/20 px-2.5 py-1 rounded">
                           {step.role}
                         </span>
                       </div>
 
                       {/* Step Description */}
-                      <p className="mt-4 text-[14.5px] leading-relaxed text-text-secondary">
+                      <p className="mt-4 text-xs md:text-[14.5px] leading-relaxed text-text-secondary">
                         {step.desc}
                       </p>
 
                       {/* Step Inputs and Outputs Block */}
-                      <div className="mt-6 pt-5 border-t border-dashed border-surface-border/60 grid gap-4 sm:grid-cols-2 text-[12.5px]">
+                      <div className="mt-6 pt-5 border-t border-dashed border-surface-border/60 grid gap-4 sm:grid-cols-2 text-[11.5px] md:text-[12.5px]">
                         <div>
-                          <span className="font-mono text-[9.5px] uppercase tracking-wider text-text-tertiary block mb-1">
+                          <span className="font-mono text-[9px] md:text-[9.5px] uppercase tracking-wider text-text-tertiary block mb-1">
                             Input (In)
                           </span>
                           <span className="text-text-secondary">
@@ -280,7 +282,7 @@ export default function PitchPage() {
                           </span>
                         </div>
                         <div className="sm:border-l sm:border-surface-border/60 sm:pl-4">
-                          <span className="font-mono text-[9.5px] uppercase tracking-wider text-text-tertiary block mb-1">
+                          <span className="font-mono text-[9px] md:text-[9.5px] uppercase tracking-wider text-text-tertiary block mb-1">
                             Output (Out)
                           </span>
                           <span className="text-gold font-medium">
@@ -359,7 +361,6 @@ export default function PitchPage() {
       </section>
 
       {/* CONTACT / FORM SECTION */}
-      {/* Прибрано зайві обмежуючі контейнери, щоб форма розгорнулася 1-в-1 як на головній */}
       <section id="contact" className="border-t border-surface-border">
         <ContactSection />
       </section>
