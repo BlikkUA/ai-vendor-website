@@ -308,14 +308,14 @@ export default function PitchPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-surface-border text-center">
               
               <div className="flex flex-col items-center justify-center pb-8 md:pb-0 md:px-4 space-y-3.5">
-                <div className="font-display text-4xl font-semibold text-text-primary sm:text-5xl tracking-tight">10k+</div>
+                <div className="font-display text-4xl font-semibold text-text-primary sm:text-5xl tracking-tight">40k+</div>
                 <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-gold font-semibold">
                   Monthly Volume Capacity
                 </div>
               </div>
 
               <div className="flex flex-col items-center justify-center py-8 md:py-0 md:px-4 space-y-3.5">
-                <div className="font-display text-4xl font-semibold text-text-primary sm:text-5xl tracking-tight">99%+</div>
+                <div className="font-display text-4xl font-semibold text-text-primary sm:text-5xl tracking-tight">97,5%+</div>
                 <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-gold font-semibold">
                   Accuracy Precision Bar
                 </div>
