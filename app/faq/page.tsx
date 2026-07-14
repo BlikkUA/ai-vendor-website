@@ -12,7 +12,7 @@ const faqCategories = [
       },
       {
         question: "Do you have a minimum project size or commitment?",
-        answer: "No. We build for fast iteration. You can start with a brief, high-stakes pilot batch to test our accuracy before committing to a long-term roadmap or scaling the workforce volume.",
+        answer: "No. We can always start with something smaller so you can see what we're capable of and how well we understand the rules before we begin a long-term project.",
       },
       {
         question: "How are your remote project teams structured?",
