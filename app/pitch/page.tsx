@@ -347,8 +347,10 @@ export default function PitchPage() {
               </p>
               <div className="mt-8 flex justify-center">
                 <a 
-                  href="/docs/VendorPlus_Capability_Statement.pdf" 
-                  download 
+                  href="/docs/vendor-plus-proposal.pdf" 
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer" 
                   className="btn-secondary inline-flex items-center gap-2"
                 >
                   Download PDF Brief
