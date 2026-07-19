@@ -336,25 +336,21 @@ export default function PitchPage() {
       {/* PDF CAPABILITY STATEMENT BANNER */}
       <section className="container-page pb-16">
         <Reveal>
-          <div className="card relative overflow-hidden p-10 text-center md:p-14">
+          <div className="card relative overflow-hidden p-0 text-center md:p-0">
             <div className="absolute inset-0 bg-noise-radial opacity-30 pointer-events-none" />
             <div className="relative z-10">
               <h2 className="text-2xl font-semibold tracking-tight text-text-primary sm:text-3xl">
-                Looking for an offline document?
+                
               </h2>
               <p className="mx-auto mt-4 max-w-md text-sm text-text-secondary">
-                Download our official Capability Statement PDF to review or share with your engineering and operations team.
+                
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-0 flex justify-center">
                 <a 
-                  href="/docs/vendor-plus-proposal.pdf" 
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="btn-secondary inline-flex items-center gap-2"
+                  
                 >
-                  Download PDF Brief
-                  <span aria-hidden>↓</span>
+                  
+                  
                 </a>
               </div>
             </div>
