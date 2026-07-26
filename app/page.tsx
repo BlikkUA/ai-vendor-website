@@ -6,6 +6,8 @@ import TagMarquee from "@/components/TagMarquee";
 
 import Reveal from "@/components/Reveal";
 
+import GradientText from "@/components/GradientText";
+
 
 
 const stats = [

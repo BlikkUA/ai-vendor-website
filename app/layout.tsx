@@ -3,6 +3,9 @@ import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackgroundFX from "@/components/BackgroundFX";
+import CursorGlow from "@/components/CursorGlow";
+import Particles from "@/components/Particles";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -38,6 +41,7 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${body.variable} ${mono.variable} bg-ink`}
       >
+        <BackgroundFX />
         <Navbar />
         <main>{children}</main>
         <Footer />

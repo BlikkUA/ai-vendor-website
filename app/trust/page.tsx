@@ -135,13 +135,13 @@ export default function TrustCenter() {
               </p>
               <div className="mt-8">
                 <a 
-                  href="mailto:trust@vendorplus.ai" 
+                  href="mailto:info@vendor-plus.com" 
                   className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-ink bg-amber-400 hover:bg-amber-300 transition-colors rounded-full duration-200 font-body font-semibold"
                 >
                   Contact Trust Team
                 </a>
                 <div className="mt-4 text-xs font-mono text-text-tertiary">
-                  or email us directly at <span className="text-gold">trust@vendorplus.ai</span>
+                  or email us directly at <span className="text-gold">info@vendor-plus.com</span>
                 </div>
               </div>
             </div>
