@@ -9,9 +9,16 @@ export default function BackgroundFX() {
   const [pos, setPos] = useState({ x: -100, y: -100 });
   const [isHovered, setIsHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+
+    // Перевіряємо, чи це мобільний/сенсорний пристрій
+    if (window.matchMedia("(pointer: coarse)").matches || "ontouchstart" in window) {
+      setIsTouchDevice(true);
+      return;
+    }
 
     const handleMouseMove = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
@@ -29,21 +36,24 @@ export default function BackgroundFX() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  if (!mounted) return null;
+  // Якщо це телефон або компонент ще не змонтовано — не рендеримо нічого
+  if (!mounted || isTouchDevice) return null;
 
   return createPortal(
     <>
       <style jsx global>{`
-        html,
-        body,
-        a,
-        button,
-        input,
-        select,
-        textarea,
-        [role="button"],
-        * {
-          cursor: none !important;
+        @media (pointer: fine) {
+          html,
+          body,
+          a,
+          button,
+          input,
+          select,
+          textarea,
+          [role="button"],
+          * {
+            cursor: none !important;
+          }
         }
       `}</style>
 
@@ -59,9 +69,7 @@ export default function BackgroundFX() {
           borderRadius: "50%",
           pointerEvents: "none",
           zIndex: 2147483647,
-          // Напівпрозорий у звичайному стані (0.5), майже 100% яскравий на кнопці (0.95)
           opacity: isHovered ? 0.95 : 0.5,
-          // Яскраве насичене світіння при наведенні на елементи
           boxShadow: isHovered
             ? `0 0 16px 4px rgba(232, 184, 75, 0.85), 0 0 30px 8px rgba(232, 184, 75, 0.5)`
             : `0 0 10px 2px rgba(232, 184, 75, 0.4), 0 0 20px 4px rgba(232, 184, 75, 0.25)`,
