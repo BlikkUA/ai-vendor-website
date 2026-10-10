@@ -37,11 +37,11 @@ export default function Footer() {
       <div className="container-page py-16">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-5">
           <div className="col-span-2">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded border border-gold/40">
+            <Link href="/" className="group flex items-center gap-2">
+              <span className="flex h-6 w-6 items-center justify-center rounded border border-gold/45 transition-colors duration-300 group-hover:border-gold">
                 <span className="h-1.5 w-1.5 rounded-sm bg-gold" />
               </span>
-              <span className="font-display text-[17px] font-semibold text-text-primary">
+              <span className="font-display text-[17px] font-semibold text-text-primary transition-colors duration-300 group-hover:text-gold">
                 Vendor+
               </span>
             </Link>
@@ -49,8 +49,19 @@ export default function Footer() {
               The human-in-the-loop layer for teams building frontier AI —
               labeling, evaluation, and domain review at production scale.
             </p>
-            <div className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-text-tertiary">
-              SOC 2 Type II · ISO 27001 · GDPR ready
+            
+            {/* Сертифікації та живий статус системи */}
+            <div className="mt-6 flex flex-col gap-3">
+              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-text-tertiary">
+                SOC 2 Type II · ISO 27001 · GDPR ready
+              </div>
+              <div className="flex items-center gap-2 font-mono text-[11px] text-text-secondary">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                </span>
+                <span>Systems Operational</span>
+              </div>
             </div>
           </div>
 
@@ -64,7 +75,7 @@ export default function Footer() {
                   <li key={i}>
                     <Link
                       href={l.href}
-                      className="text-sm text-text-secondary transition-colors hover:text-gold"
+                      className="text-sm text-text-secondary transition-colors duration-200 hover:text-gold"
                     >
                       {l.label}
                     </Link>
@@ -78,9 +89,9 @@ export default function Footer() {
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-surface-border pt-8 text-xs text-text-tertiary md:flex-row md:items-center">
           <span>© {new Date().getFullYear()} Vendor+ Data, Inc. All rights reserved.</span>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-text-secondary">Privacy</Link>
-            <Link href="/terms" className="hover:text-text-secondary">Terms</Link>
-            <Link href="/security" className="hover:text-text-secondary">Security</Link>
+            <Link href="/privacy" className="transition-colors duration-200 hover:text-text-secondary hover:text-gold">Privacy</Link>
+            <Link href="/terms" className="transition-colors duration-200 hover:text-text-secondary hover:text-gold">Terms</Link>
+            <Link href="/security" className="transition-colors duration-200 hover:text-text-secondary hover:text-gold">Security</Link>
           </div>
         </div>
       </div>
