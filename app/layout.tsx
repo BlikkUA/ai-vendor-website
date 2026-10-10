@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`\${display.variable} ${body.variable}${mono.variable} bg-ink`}
+        className={`${display.variable} ${body.variable} ${mono.variable} bg-ink`}
       >
         <BackgroundFX />
         <Navbar />
