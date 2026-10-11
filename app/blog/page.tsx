@@ -2,6 +2,7 @@ import { client } from '@/sanity/lib/client'
 import { urlForImage } from '@/sanity/lib/image'
 import Image from 'next/image'
 import Link from 'next/link'
+export const dynamic = "force-dynamic";
 
 const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
   _id,
