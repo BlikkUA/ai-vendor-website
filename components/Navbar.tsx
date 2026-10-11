@@ -11,6 +11,7 @@ const links = [
   { href: "/why-choose-us", label: "Why Choose Us" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Navbar() {

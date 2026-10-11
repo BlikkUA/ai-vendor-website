@@ -154,8 +154,8 @@ export default function Home() {
                   {s.desc}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  {s.tags.map((t) => (
-                    <span key={t} className="tag-chip">
+                  {s.tags.map((t, i) => (
+                    <span key={`${t}-${i}`} className="tag-chip">
                       {t}
                     </span>
                   ))}
